@@ -63,23 +63,40 @@
             </div>
 
             <div class="hero-visual">
-                <div class="blob-playground" id="bus-container">
-                    <!-- The 3D Canvas will be injected here by Three.js -->
+                <div class="blob-playground">
+                    <div class="blob-main"></div>
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/cloud-computing-3428242-2902696.png"
+                        alt="DevOps Illustration" class="floating-char">
+
+                    <div class="orbit-circle">
+                        <div class="tech-icon i-aws"><i class="fab fa-aws"></i></div>
+                        <div class="tech-icon i-docker"><i class="fab fa-docker"></i></div>
+                        <div class="tech-icon i-python"><i class="fab fa-python"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- 2D Bus Animation Section (Moved to Footer of Hero) -->
+        <div class="bus-animation-container">
+            <div class="danfo-bus">
+                <div class="bus-body">
+                    <div class="bus-stripe"></div>
+                    <div class="bus-window"></div>
+                    <div class="bus-window"></div>
+                </div>
+                <div class="bus-wheels">
+                    <div class="wheel"></div>
+                    <div class="wheel"></div>
+                </div>
+            </div>
+
+            <!-- Dropping Icons (Handled by JS now) -->
+        </div>
     </header>
 
-    <!-- Three.js CDN -->
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-            }
-        }
-    </script>
-    <script type="module" src="bus_animation.js"></script>
+    <!-- Bus Logic Script -->
+    <script src="bus_logic.js"></script>
 
     <section id="about" class="about-section hidden">
 
