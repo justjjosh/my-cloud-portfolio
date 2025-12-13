@@ -11,13 +11,27 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
 // Interactive Dangly Balls
-document.addEventListener('mousemove', (e) => {
-    const balls = document.querySelectorAll('.dangler');
-    const mouseX = e.clientX / window.innerWidth;
-    
-    balls.forEach((ball, index) => {
-        const depth = index + 1;
-        const moveX = (mouseX - 0.5) * (depth * 10);
-        ball.style.transform = `rotate(${moveX}deg)`;
-    });
+balls.forEach((ball, index) => {
+    const depth = index + 1;
+    const moveX = (mouseX - 0.5) * (depth * 10);
+    ball.style.transform = `rotate(${moveX}deg)`;
 });
+});
+
+// Mobile Nav Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+}
