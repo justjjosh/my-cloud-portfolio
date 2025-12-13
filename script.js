@@ -11,11 +11,15 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
 // Interactive Dangly Balls
-balls.forEach((ball, index) => {
-    const depth = index + 1;
-    const moveX = (mouseX - 0.5) * (depth * 10);
-    ball.style.transform = `rotate(${moveX}deg)`;
-});
+document.addEventListener('mousemove', (e) => {
+    const balls = document.querySelectorAll('.dangler');
+    const mouseX = e.clientX / window.innerWidth;
+
+    balls.forEach((ball, index) => {
+        const depth = index + 1;
+        const moveX = (mouseX - 0.5) * (depth * 10);
+        ball.style.transform = `rotate(${moveX}deg)`;
+    });
 });
 
 // Mobile Nav Toggle

@@ -70,8 +70,8 @@ body {
 .hero {
     min-height: 100vh;
     position: relative;
-    padding: 2rem 10% 8rem 10%;
-    /* Added bottom padding for bus lane */
+    padding: 120px 10% 8rem 10%;
+    /* Increased top padding for fixed nav */
     overflow: hidden;
 }
 
@@ -279,6 +279,24 @@ body {
 }
 
 /* --- Nav --- */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    /* High z-index to stay on top of everything */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for depth */
+}
+
 .logo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
