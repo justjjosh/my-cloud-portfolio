@@ -820,22 +820,171 @@ body {
     }
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
+/* About Section - Full Width Container */
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
     position: relative;
     z-index: 2;
 }
 
-.about-content h2 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.about-content {
+    text-align: left;
 }
 
-.underline {
-    text-decoration: underline wavy var(--green);
-    text-decoration-thickness: 3px;
+.about-name {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+}
+
+.about-heading {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+}
+
+.about-heading .highlight {
+    color: var(--blue);
+}
+
+.about-bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.about-bio:last-of-type {
+    margin-bottom: 1.25rem;
+}
+
+.about-socials {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.about-socials .social-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.about-socials .social-icon:hover {
+    background: var(--text);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Photo Container */
+.about-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+/* Decorative Frame Accents */
+.frame-accent {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+}
+
+.frame-accent.top-right {
+    top: -15px;
+    right: -15px;
+    border-top: 4px solid var(--text);
+    border-right: 4px solid var(--text);
+}
+
+.frame-accent.bottom-left {
+    bottom: -15px;
+    left: -15px;
+    border-bottom: 4px solid var(--text);
+    border-left: 4px solid var(--text);
+}
+
+/* Responsive About Section */
+@media (max-width: 900px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .about-content {
+        text-align: center;
+        order: 2;
+    }
+
+    .about-photo-container {
+        order: 1;
+    }
+
+    .about-socials {
+        justify-content: center;
+    }
+
+    .about-name {
+        font-size: 2rem;
+    }
+
+    .about-heading {
+        font-size: 1.5rem;
+    }
+
+    .photo-frame {
+        max-width: 280px;
+    }
+
+    .frame-accent {
+        width: 60px;
+        height: 60px;
+    }
+
+    .frame-accent.top-right {
+        top: -12px;
+        right: -12px;
+    }
+
+    .frame-accent.bottom-left {
+        bottom: -12px;
+        left: -12px;
+    }
 }
 
 /* Skills Pills */
